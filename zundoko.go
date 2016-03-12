@@ -19,7 +19,7 @@ type Choirs struct {
 
 //Push is append choirs
 func (c *Choirs) Push(s string) {
-	c.c = append(c.c, s)
+	c.c = append(c.c, s) //maybe panic if c is nil.
 }
 
 //CountZunDoko returns count of "ZUN" and "DOKO" choirs

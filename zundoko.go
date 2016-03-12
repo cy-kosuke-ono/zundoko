@@ -2,6 +2,7 @@ package zundoko
 
 import (
 	"math/rand"
+	"reflect"
 	"time"
 )
 
@@ -20,6 +21,18 @@ type Choirs struct {
 //Push is append choirs
 func (c *Choirs) Push(s string) {
 	c.c = append(c.c, s)
+}
+
+//Match returns result of compare to "ZUN, ZUN, ZUN, ZUN, DOKO" pattern.
+func (c *Choirs) Match() bool {
+	if c == nil {
+		return false
+	}
+	if len(c.c) < 5 {
+		return false
+	}
+	p := []string{Zun, Zun, Zun, Zun, Doko}
+	return reflect.DeepEqual(c.c[len(c.c)-5:], p)
 }
 
 //CountZunDoko returns count of "ZUN" and "DOKO" choirs
@@ -66,7 +79,7 @@ func generate() chan string {
 //Run zundoko-choirs
 func Run() *Choirs {
 	zd := generate()
-	var c = &Choirs{make([]string, 0)}
+	c := &Choirs{make([]string, 0)}
 	zcount := 0
 	for {
 		s := <-zd
@@ -77,6 +90,21 @@ func Run() *Choirs {
 			break
 		} else {
 			zcount = 0
+		}
+	}
+	c.Push(Kiyoshi)
+	return c
+}
+
+//Run2 zundoko-choirs (another logic)
+func Run2() *Choirs {
+	zd := generate()
+	c := &Choirs{make([]string, 0)}
+	for {
+		s := <-zd
+		c.Push(s)
+		if c.Match() {
+			break
 		}
 	}
 	c.Push(Kiyoshi)

@@ -9,5 +9,8 @@ import (
 func main() {
 	c := zundoko.Run()
 	fmt.Println(c)
-	fmt.Printf("%d回\n", c.Count()-1) //exclude "KIYOSHI" choir
+	z, d := c.CountZunDoko()
+	fmt.Printf(" count \"ZUN\": %d\n", z)
+	fmt.Printf("count \"DOKO\": %d\n", d)
+	fmt.Printf(" count Total: %d\n", z+d)
 }

@@ -2,7 +2,6 @@ package zundoko
 
 import (
 	"math/rand"
-	"strings"
 	"time"
 )
 
@@ -31,7 +30,11 @@ func (c *Choirs) Count() int {
 }
 
 func (c *Choirs) String() string {
-	return strings.Join(c.c, "")
+	content := make([]byte, 0, 128)
+	for _, str := range c.c {
+		content = append(content, str...)
+	}
+	return string(content)
 }
 
 func generate() chan string {

@@ -9,6 +9,7 @@ https://twitter.com/kumiromilk/status/707437861881180160 より。
 ## Reference
 
 - [ズンドコキヨシまとめ - Qiita](http://qiita.com/shunsugai@github/items/971a15461de29563bf90)
+- [ズンドコキヨシ with Go (n番煎じ) - Qiita](http://qiita.com/shinderuman@github/items/2ff67c2404647d2b7ea6)
 
 ## License
 

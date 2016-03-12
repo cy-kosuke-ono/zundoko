@@ -23,16 +23,16 @@ func (c *Choirs) Push(s string) {
 	c.c = append(c.c, s)
 }
 
-//Match returns result of compare to "ZUN, ZUN, ZUN, ZUN, DOKO" pattern.
-func (c *Choirs) Match() bool {
+var matchingPattern = []string{Zun, Zun, Zun, Zun, Doko}
+
+func (c *Choirs) match() bool {
 	if c == nil {
 		return false
 	}
 	if len(c.c) < 5 {
 		return false
 	}
-	p := []string{Zun, Zun, Zun, Zun, Doko}
-	return reflect.DeepEqual(c.c[len(c.c)-5:], p)
+	return reflect.DeepEqual(c.c[len(c.c)-5:], matchingPattern)
 }
 
 //CountZunDoko returns count of "ZUN" and "DOKO" choirs
@@ -103,7 +103,7 @@ func Run2() *Choirs {
 	for {
 		s := <-zd
 		c.Push(s)
-		if c.Match() {
+		if c.match() {
 			break
 		}
 	}

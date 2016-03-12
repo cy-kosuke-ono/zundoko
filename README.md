@@ -8,7 +8,9 @@ https://twitter.com/kumiromilk/status/707437861881180160 より。
 
 ## Reference
 
+- [「ズンドコチェック」なるものが流行っているらしい — プログラミング言語 Go | text.Baldanders.info](http://text.baldanders.info/golang/zundoko-choir/)
 - [ズンドコキヨシまとめ - Qiita](http://qiita.com/shunsugai@github/items/971a15461de29563bf90)
+- [ズンドコキヨシ with Go (n番煎じ) - Qiita](http://qiita.com/shinderuman@github/items/2ff67c2404647d2b7ea6)
 
 ## License
 
